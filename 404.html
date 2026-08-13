@@ -1,97 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>404 - Page not found</title>
-    <meta name="renderer" content="webkit"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <title>404 - Wrong Room...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            font-family: "微软雅黑";
+            font-family: 'Montserrat', sans-serif;
         }
 
-        img {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+        body {
+            /* Sultry dark gradient background */
+            background: radial-gradient(circle at center, #2a0845 0%, #11001c 50%, #000000 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: #ffffff;
         }
 
         .container {
-            max-width: 90%;
-            margin: 0 auto;
-            padding-top: 80px;
-        }
-
-        .bg {
-            display: block;
-            max-width: 100%;
-            margin: 0px auto;
-        }
-
-        .btn {
-            width: 400px;
-            margin: 0 auto;
-            max-width: 100%;
-            margin-top: 40px;
-        }
-
-        .btn a {
-            float: left;
-            text-decoration: none;
-            width: 46.5%;
-            border: 1px solid #5298ff;
-            background: #5298ff;
-            color: #FFF;
-            display: block;
-            height: 46px;
-            line-height: 44px;
             text-align: center;
+            max-width: 90%;
+            width: 450px;
+            padding: 50px 30px;
+            /* Dark glassmorphism effect */
+            background: rgba(20, 20, 20, 0.6);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 20, 147, 0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 0 80px rgba(255, 20, 147, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+            display: inline-block;
+            text-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+            /* Floating animation */
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            background: -webkit-linear-gradient(45deg, #ff1493, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: #b0a8b9;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 35px;
+            line-height: 1.5;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn-group a {
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            padding: 16px 20px;
             font-size: 16px;
-            border-radius: 3px;
-            overflow: hidden;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .btn .goindex {
-            margin-right: 7%;
+        /* Continuous neon pulse for the primary button */
+        @keyframes neonPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 20, 147, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 20, 147, 0); }
         }
 
-        .btn .lx {
-            border: 1px solid #d8d8d8;
-            background: #ffffff;
-            color: #8c8c8c;
+        .goindex {
+            background: linear-gradient(90deg, #ff1493, #d5006d);
+            color: #FFF;
+            border: none;
+            animation: neonPulse 2s infinite;
+            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.4);
         }
 
-        @media screen and (max-width: 500px) {
-            .btn {
-                width: 85%;
-            }
-
-            .btn a {
-                width: 100%;
-                font-size: 15px;
-                height: 42px;
-                line-height: 42px;
-            }
-
-            .btn .goindex {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
+        .goindex:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, #ff47a8, #eb007b);
+            box-shadow: 0 12px 30px rgba(255, 20, 147, 0.6);
         }
+
+        .lx {
+            background: transparent;
+            color: #ff1493;
+            border: 2px solid #ff1493;
+        }
+
+        .lx:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 20, 147, 0.1);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.2);
+        }
+
+        /* Subtle glowing dots in the background */
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,20,147,0.15) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+        }
+        
+        .dot-1 { width: 300px; height: 300px; top: -100px; left: -100px; }
+        .dot-2 { width: 400px; height: 400px; bottom: -150px; right: -100px; }
     </style>
 </head>
 <body>
+
+<div class="bg-element dot-1"></div>
+<div class="bg-element dot-2"></div>
+
 <div class="container">
-    <img src="https://i.ibb.co/wL55bCz/404.png" class="bg"/>
-    <div class="btn">
-        <a href="https://alink.pp.ua/duckist" class="goindex">Back to Previous Page</a>
-        <a href="https://alink.pp.ua/duckist" target="_blank" class="lx">Watch Video</a>
-        <div style="clear: both;"></div>
+    <!-- Suggestive emoji/icon. You can replace this with a transparent PNG of a silhouette if you prefer -->
+    <div class="icon">😈</div>
+    
+    <h1>Wrong Room...</h1>
+    <p>The page you were looking for doesn't exist anymore. But don't leave yet, the real fun is just one click away.</p>
+    
+    <div class="btn-group">
+        <a href="https://alink.pp.ua/duckist" class="goindex">💋 Show Me More</a>
+        <a href="https://alink.pp.ua/duckist" target="_blank" class="lx">Unlock Video 🔞</a>
     </div>
 </div>
+
 </body>
 </html>
